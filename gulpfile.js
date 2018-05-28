@@ -10,7 +10,6 @@ var gulp = require('gulp'), // Gulp
     imagemin = require('gulp-imagemin'), // Оптимизация изображений (images optimization)
     plumber = require('gulp-plumber'), // Обработка ошибок (error handling)
     pngquant = require('imagemin-pngquant'), // Оптимизация PNG-изображений (PNG images optimization)
-    pug = require('gulp-pug'), // Pug
     rename = require('gulp-rename'), // Переименование файлов (files rename)
     sass = require('gulp-sass'), // sass
     uglify = require('gulp-uglify'), // Минификация JS-файлов (minification of JS files)
@@ -25,13 +24,13 @@ var paths = {
     dist: './dist'
   },
   watch: {
-    html: './app/html/**/*.html',// Путь для вотчера Pug-файлов (path for watcher to Pug files)
+    html: './app//*.html',// Путь для вотчера html-файлов (path for watcher to html files)
     sass: './app/sass/**/*.sass',// Путь для вотчера Sass-файлов (path for watcher to Sass files)
     js: './app/js/*.js'
   },
   app: {
     html: {
-      src: './app/pug/index.html',
+      src: './app/index.html',
       dest: './app'
     },
     common: {
@@ -47,9 +46,8 @@ var paths = {
     vendor: {
       css: {
         src: [
-          './app/libs/*.css'
-          /*'./app/libs/bootstrap-grid/bootstrap-grid.css',
-          './app/libs/fontawesome/font-awesome.min.css',
+          './app/libs/bootstrap-grid/bootstrap-grid.min.css'
+          /*'./app/libs/fontawesome/font-awesome.min.css',
           './app/libs/mmenu/css/jquery.mmenu.all.css',
           './app/libs/css-hamburgers/hamburgers.css',
           './app/libs/owl.carousel/dist/assets/owl.carousel.min.css',
@@ -60,9 +58,8 @@ var paths = {
       },
       js: {
         src: [
-          './app/libs/*.js'
-          /*'./app/libs/jquery/dist/jquery.min.js',
-          './app/libs/mmenu/js/jquery.mmenu.all.min.js',
+          './app/libs/jquery/jquery-3.3.1.slim.min.js'
+          /*'./app/libs/mmenu/js/jquery.mmenu.all.min.js',
           './app/libs/owl.carousel/dist/owl.carousel.min.js',
           './app/libs/equalHeights/equalheights.js',
           './app/libs/fotorama/fotorama.js',
@@ -73,7 +70,6 @@ var paths = {
       fonts: {
         src: [
           './app/fonts/*.*'
-          /*'./app/fonts/font-awesome/fonts/*.*'*/
         ],
         dest: './app/fonts'
       }
@@ -125,8 +121,8 @@ gulp.task('serve', function() {
   gulp.watch('*.html').on('change', reload);
 });
 
-/* // Таск для работы Pug, преобразование Pug в HTML (Pug to HTML conversion task):
-gulp.task('html', function() {
+// Таск для работы Pug, преобразование Pug в HTML (Pug to HTML conversion task):
+/*gulp.task('html', function() {
   return gulp.src(paths.app.html.src) // Исходник таска html (source of html task)
     .pipe(plumber()) // Обработка ошибок таска html (error handling of html task) 
     .pipe(debug({title: 'Pug source'})) // Отслеживание исходника таска html (source tracking of html task)
@@ -138,7 +134,7 @@ gulp.task('html', function() {
     .pipe(gulp.dest(paths.app.html.dest)) // Сохранение HTML-шаблона письма в папке app (save of HTML template in folder app)
     .pipe(debug({title: 'Pug dest'})) // Отслеживание сохранения HTML-шаблона (saving tracking of HTML template)
     .pipe(browserSync.stream()); // Browsersync
-}); */
+});*/
 
 // Таск для преобразования sass-файлов в CSS (sass to CSS conversion):
 gulp.task('cssCommon', function() {
@@ -154,7 +150,7 @@ gulp.task('cssCommon', function() {
     .pipe(csso())
     .pipe(gulp.dest(paths.app.common.css.dest)) // Сохранение CSS-файлов в папке app/css (saving of CSS files in folder app/css)
     .pipe(debug({title: 'Sass dest'})) // Отслеживание сохранения (saving tracking)
-    .pipe(browserSync.stream()); // Browsersync
+    .pipe(browserSync.reload({stream: true})) // Browsersync
 });
 
 // Таск для объединения и минификации пользовательских JS-файлов (task for merger and minification custom JS files)
@@ -214,16 +210,6 @@ gulp.task('dist', function () {
       .pipe(gulp.dest(paths.dist.fonts.dest));
   return htmlDist, cssDist, jsDist, fontsDist;
 });
-
-//gulp.task('deploy', function () {
-//  return gulp.src('dist/**/*')
-//      .pipe(sftp({
-//          host: 's29.webhost1.ru',
-//          port: 21,
-//          auth: 'keyMain',
-//          remotePath: '/ivanzagainov/subs/smitler'
-//      }));
-//});
 
 gulp.task('deploy', function() {
 
