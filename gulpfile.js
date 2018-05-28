@@ -25,13 +25,13 @@ var paths = {
     dist: './dist'
   },
   watch: {
-    pug: './app/pug/**/*.pug',// Путь для вотчера Pug-файлов (path for watcher to Pug files)
+    html: './app/html/**/*.html',// Путь для вотчера Pug-файлов (path for watcher to Pug files)
     sass: './app/sass/**/*.sass',// Путь для вотчера Sass-файлов (path for watcher to Sass files)
     js: './app/js/*.js'
   },
   app: {
     html: {
-      src: './app/pug/index.pug',
+      src: './app/pug/index.html',
       dest: './app'
     },
     common: {
@@ -47,30 +47,33 @@ var paths = {
     vendor: {
       css: {
         src: [
-          './app/libs/bootstrap-grid/bootstrap-grid.css',
+          './app/libs/*.css'
+          /*'./app/libs/bootstrap-grid/bootstrap-grid.css',
           './app/libs/fontawesome/font-awesome.min.css',
           './app/libs/mmenu/css/jquery.mmenu.all.css',
           './app/libs/css-hamburgers/hamburgers.css',
           './app/libs/owl.carousel/dist/assets/owl.carousel.min.css',
           './app/libs/fotorama/fotorama.css',
-          './app/libs/selectize/css/selectize.css'
+          './app/libs/selectize/css/selectize.css'*/
         ],
         dest: './app/css'
       },
       js: {
         src: [
-          './app/libs/jquery/dist/jquery.min.js',
+          './app/libs/*.js'
+          /*'./app/libs/jquery/dist/jquery.min.js',
           './app/libs/mmenu/js/jquery.mmenu.all.min.js',
           './app/libs/owl.carousel/dist/owl.carousel.min.js',
           './app/libs/equalHeights/equalheights.js',
           './app/libs/fotorama/fotorama.js',
-          './app/libs/selectize/js/standalone/selectize.min.js'
+          './app/libs/selectize/js/standalone/selectize.min.js'*/
         ],
         dest: './app/js/min'
       },
       fonts: {
         src: [
-          './app/fonts/font-awesome/fonts/*.*'
+          './app/fonts/*.*'
+          /*'./app/fonts/font-awesome/fonts/*.*'*/
         ],
         dest: './app/fonts'
       }
@@ -118,11 +121,11 @@ gulp.task('serve', function() {
 /*   gulp.watch(paths.watch.pug, gulp.series('html'));
   gulp.watch(paths.watch.sass, gulp.series('cssCommon'));
   gulp.watch(paths.watch.js, gulp.series('jsCommon')); */
-  gulp.watch([paths.watch.pug, paths.watch.sass, paths.watch.js], gulp.series('build')); // Отслеживание изменений Pug и Sass-файлов (change tracking of Pug and Sass files)
+  gulp.watch([paths.watch.html, paths.watch.sass, paths.watch.js], gulp.series('build')); // Отслеживание изменений Pug и Sass-файлов (change tracking of Pug and Sass files)
   gulp.watch('*.html').on('change', reload);
 });
 
-// Таск для работы Pug, преобразование Pug в HTML (Pug to HTML conversion task):
+/* // Таск для работы Pug, преобразование Pug в HTML (Pug to HTML conversion task):
 gulp.task('html', function() {
   return gulp.src(paths.app.html.src) // Исходник таска html (source of html task)
     .pipe(plumber()) // Обработка ошибок таска html (error handling of html task) 
@@ -135,7 +138,7 @@ gulp.task('html', function() {
     .pipe(gulp.dest(paths.app.html.dest)) // Сохранение HTML-шаблона письма в папке app (save of HTML template in folder app)
     .pipe(debug({title: 'Pug dest'})) // Отслеживание сохранения HTML-шаблона (saving tracking of HTML template)
     .pipe(browserSync.stream()); // Browsersync
-});
+}); */
 
 // Таск для преобразования sass-файлов в CSS (sass to CSS conversion):
 gulp.task('cssCommon', function() {
@@ -241,7 +244,7 @@ gulp.task('deploy', function() {
 });
 
 // Таск для сборки (build task):
-gulp.task('build', gulp.parallel('html', 'cssCommon', 'jsCommon', 'cssVendor', 'jsVendor', 'fontsVendor'));
+gulp.task('build', gulp.parallel('cssCommon', 'jsCommon', 'cssVendor', 'jsVendor', 'fontsVendor'));
 
 // Таск для разработки (development task):
 gulp.task('default', gulp.series('build', 'serve'));
