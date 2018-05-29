@@ -96,9 +96,10 @@ gulp.task('serve', function() {
     server: './app'
   });
   /* gulp.watch(paths.watch.pug, gulp.series('html')); */
-  gulp.watch('app/*.html', browserSync.reload); // Отслеживание изменений в html
+  //gulp.watch('app/*.html', browserSync.reload); // Отслеживание изменений в html
   gulp.watch(paths.watch.sass, gulp.series('cssCommon'));
   gulp.watch(paths.watch.js, gulp.series('jsCommon'));
+  gulp.watch('./app/*.html').on('change', reload);
 });
 
 // Таск для работы Pug, преобразование Pug в HTML (Pug to HTML conversion task):
