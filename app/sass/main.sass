@@ -12,6 +12,24 @@ body
 a
     color: $active-color
 
+h2
+    font-size: 24px
+
+.btn
+    padding: 20px 30px
+    display: inline-block
+    color: $white
+    border-radius: 5px
+    text-decoration: none
+    font-size: 16px
+    font-weight: 700
+    transition: all .2s ease
+    &-primary
+        background-color: $active-color
+        border-bottom: 5px solid darken($active-color, 10%)
+        &:hover
+            background-color: lighten($active-color, 2%)
+
 //Header
 .top-nav
     background-color: $white
@@ -71,3 +89,16 @@ a
             h3
                 text-transform: uppercase
                 font-weight: 400
+
+.content
+    margin-top: 40px
+
+.directions
+    margin-top: 80px
+    &-block
+        background-color: $white
+        height: 220px
+        text-align: center
+        padding: 15px 20px
+        h3
+            color: $active-color
