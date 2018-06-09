@@ -823,7 +823,7 @@
 
         if(_.options.rows > 0) {
             originalSlides = _.$slides.children().children();
-            originalSlides.removeAttr('style');
+            //originalSlides.removeAttr('style');
             _.$slider.empty().append(originalSlides);
         }
 

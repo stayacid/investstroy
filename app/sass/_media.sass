@@ -1,0 +1,105 @@
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	.top-nav
+        &_menu
+            li
+                a
+                    &::after
+                        display: none
+	.footer
+        padding: 30px 20px
+        &-contacts
+            text-align: left
+	.directions
+        margin-top: 40px
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	.top-nav
+        &_menu
+            padding: 0 20px
+            justify-content: center
+            li
+                margin-right: 20px
+	.footer
+        .copy
+            small
+                margin-top: 20px
+	.left-sidebar_object 
+        img
+            padding-top: 20px
+	.btn-primary__centered
+        text-align: center
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px)
+	.top-nav
+        &_btn
+            display: block
+        &_menu
+            flex-direction: column
+            display: none
+            margin-bottom: 0
+            padding-left: 20px
+            li
+                line-height: 2
+                a
+                    &::after
+                        display: none
+	.left-sidebar
+        &_btn
+            display: block
+        &_menu
+            display: none
+            margin-top: 0
+        &_object
+            display: none
+	.slick-slide
+        margin: 0
+	.copy
+        text-align: center
+        small
+            margin: 36px auto
+        &-social-links
+            margin-top: 40px
+            ul
+                li:first-child
+                    a
+                        margin-left: 0
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	/**/
+
+/* Custom, iPhone Retina */
+	/**/
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+

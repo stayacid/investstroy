@@ -1,34 +1,41 @@
 @import "vars"
 @import "reset"
+@import "fontello"
 
 html
-    font-size: 14px
+    font-size: 10px
 
 body
     background-color: transparentize($body-bg,.93)
     color: $dark
     font-family: 'Roboto', sans-serif
-    padding-top: 40px
     margin: 0
+    padding-top: 40px
+    font-size: 1.4rem
 
 a
     color: $active-color
 
 h2
-    font-size: 24px
+    font-size: 2.4rem
+
+img
+    max-width: 100%
+    height: auto
 
 .btn
-    padding: 20px 30px
-    display: inline-block
-    color: $white
     border-radius: 5px
-    text-decoration: none
-    font-size: 16px
+    color: $white
+    display: inline-block
+    font-size: 1.6rem
     font-weight: 700
+    padding: 20px 30px
+    text-decoration: none
     transition: all .2s ease
     &-primary
         background-color: $active-color
         border-bottom: 5px solid darken($active-color, 10%)
+        margin-top: 24px
         &:hover
             background-color: lighten($active-color, 2%)
 
@@ -36,33 +43,68 @@ h2
 .top-nav
     background-color: $white
     padding: 15px
+    position: relative
+    &_btn
+        background-color: transparent
+        border: none
+        display: none
+        font-size: 1.8rem
+        height: 30px
+        outline: none
+        position: absolute
+        right: 15px
+        top: -50px
+        width: 30px
+        &:hover
+            cursor: pointer
     &_menu
+        display: flex
         list-style: none
         padding: 0
-        display: flex
         li
             margin-right: 45px
             a
-                text-transform: uppercase
-                text-decoration: none
                 color: $dark
                 font-weight: bold
+                text-decoration: none
+                text-transform: uppercase
                 &::after
+                    background-color: $active-color
                     content: ''
                     display: block
-                    width: 100%
                     height: 2px
-                    background-color: $active-color
                     transform: translateY(37px) scale(0)
                     transition: all .2s ease
+                    width: 100%
                 &:hover
                     &::after
                         transform: translateY(37px) scale(1)
 
+.logo
+    padding-left: 20px
+
 //Left Sidebar
 .left-sidebar
-    margin-top: 40px
+    margin-top: 4rem
     background-color: $white
+    &_btn
+        padding: 15px 30px 15px
+        position: relative
+        display: none
+        font-weight: 700
+        font-size: 1.75rem
+        &::after
+            content: ''
+            display: inline-block
+            width: 15px
+            height: 15px
+            position: absolute
+            top: 50%
+            margin-top: -10px
+            right: 20px
+            border-bottom: 2px solid $dark
+            border-right: 2px solid $dark
+            transform: rotate(45deg)
     &_menu
         list-style: none
         padding: 0
@@ -79,13 +121,16 @@ h2
                 a
                     color: $white
             a
-                text-decoration: none
                 color: $dark
                 display: block
                 padding: 15px 29px
+                text-decoration: none
     &_object
         background-color: $white
         margin-top: 30px
+        img
+            display: block
+            margin: 0 auto
         &-description
             padding: 30px
             h3
@@ -94,25 +139,30 @@ h2
 
 .content
     margin-top: 40px
+    margin-bottom: 76px
 
 .directions
-    margin-top: 80px
+    margin-top: 90px
     &-block
         background-color: $white
-        height: 220px
-        text-align: center
-        padding: 15px 10px
         background-position: bottom center
         background-repeat: no-repeat
+        height: 220px
+        padding: 15px 10px
+        text-align: center
         h3
             color: $active-color
 
+//Настройки слайдера
 .slick-slide 
     margin: 0 10px
+.slick-dots
+    bottom: -40px
 
 .footer
     background-color: $dark
     color: $footer-text
+    margin-top: 60px
     padding: 59px 0
     a
         color: $footer-text
@@ -121,11 +171,12 @@ h2
             color: $white
     small
         display: block
-        margin-top: 56px
+        font-size: 1rem
         line-height: 16px
-        font-size: 10px
+        margin-top: 56px
+        max-width: 80%
     &-policy-link
-        font-size: 12px
+        font-size: 1.2rem
     ul
         padding: 0
         list-style: none
@@ -133,14 +184,41 @@ h2
             line-height: 32px
     &-contacts
         text-align: right
+        &_phone
+            font-weight: 700
+            font-size: 2rem
+            color: $active-color
     &-social-links
         @extend .footer-contacts
         li
             display: inline-block
             a
-                display: inline-block
-                width: 32px
-                height: 32px
                 background-color: rgba($white, 0.1)
-                text-align: center
                 border-radius: 50%
+                display: inline-block
+                height: 42px
+                line-height: 42px
+                margin-left: 10px
+                text-align: center
+                transition: all .2s ease
+                width: 42px
+                &:hover
+                    background-color: rgba($white, 0.9)
+                    color: $dark
+
+//TEAM
+.team
+    text-align: center
+    h4
+        font-weight: 400
+        font-size: 18px
+        margin-bottom: 15px
+    p
+        margin-bottom: 40px
+
+//CONTACS
+.contacts
+    font-size: 16px
+
+
+@import "media" //всегда в конце
