@@ -14,6 +14,7 @@
   <!-- Slick slider -->
   <link rel="stylesheet" href="./libs/slick/slick-theme.css">
   <link rel="stylesheet" href="./libs/slick/slick.css">
+  <link rel="stylesheet" href="./libs/powerange-master/dist/powerange.min.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./css/main.min.css">
 </head>
@@ -34,7 +35,7 @@
           </button>
           <ul class="top-nav_menu">
             <li>
-              <a href="#">Главная</a>
+              <a href="index.html">Главная</a>
             </li>
             <li>
               <a href="about.html">О компании</a>
@@ -46,10 +47,10 @@
               <a href="organization.html">Структура</a>
             </li>
             <li>
-              <a href="investments.html">Инвесторам</a>
+              <a href="#">Инвесторам</a>
             </li>
             <li>
-              <a href="contacts.html">Контакты</a>
+              <a href="#">Контакты</a>
             </li>
           </ul>
         </div>
@@ -109,25 +110,117 @@
       <!-- /.col-md-4 -->
       <div class="col-lg-8">
         <div class="content">
-          <h2>СтройИнвест</h2>
-          <p>Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в
-            страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый,
-            разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти
-            одеяло.</p>
-          <p>Его многочисленные, убого тонкие по сравнению с остальным телом ножки беспомощно копошились у него перед глазами.
-            «Что со мной случилось?» – подумал он. Это не было сном. Его комната, настоящая, разве что слишком маленькая,
-            но обычная комната, мирно покоилась в своих четырех хорошо знакомых стенах. Над столом, где были разложены распакованные
-            образцы сукон – Замза был коммивояжером, – висел портрет, который он недавно вырезал из иллюстрированного журнала
-            и вставил в красивую золоченую рамку. На портрете была изображена дама в меховой шляпе и боа, она сидела очень
-            прямо и протягивала зрителю тяжелую меховую муфту, в которой целиком исчезала ее рука.</p>
-          <p>Затем взгляд Грегора устремился в окно, и пасмурная погода – слышно было, как по жести подоконника стучат капли
-            дождя – привела его и вовсе в грустное настроение. «Хорошо бы еще немного поспать и забыть всю эту чепуху», –
-            подумал он, но это было совершенно неосуществимо, он привык спать на правом боку, а в теперешнем своем</p>
-          <div class="btn-primary__centered">
-            <a href="#" class="btn btn-primary">Узнать больше о компании</a>
+          <div class="invest">
+            <h2>Инвесторам</h2>
+            <div class="invest-text">
+              <p>Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился
+                в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый,
+                выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно
+                сползти одеяло.</p>
+              <p>Его многочисленные, убого тонкие по сравнению с остальным телом ножки беспомощно копошились у него перед глазами.
+                «Что со мной случилось?» – подумал он. Это не было сном. Его комната, настоящая, разве что слишком маленькая,
+                но обычная комната, мирно покоилась в своих четырех хорошо знакомых стенах. Над столом, где были разложены
+                распакованные образцы сукон – Замза был коммивояжером, – висел портрет, который он недавно вырезал из иллюстрированного
+                журнала и вставил в красивую золоченую рамку. На портрете была изображена дама в меховой шляпе и боа, она
+                сидела очень прямо и протягивала зрителю тяжелую меховую муфту, в которой целиком исчезала ее рука.</p>
+              <p>Затем взгляд Грегора устремился в окно, и пасмурная погода – слышно было, как по жести подоконника стучат капли
+                дождя – привела его и вовсе в грустное настроение. «Хорошо бы еще немного поспать и забыть всю эту чепуху»,
+                – подумал он, но это было совершенно неосуществимо, он привык спать на правом боку, а в теперешнем своем</p>
+            </div>
+            <div class="invest-link">
+              <a href="#">Договор займа »</a>
+            </div>
+            <div class="invest-link">
+              <a href="#">Договор погашения »</a>
+            </div>
+            <div class="invest-link">
+              <a href="#">Договор залога »</a>
+            </div>
+            <div class="invest-link">
+              <a href="#">Договор поручительства »</a>
+            </div>
           </div>
         </div>
         <!-- content -->
+
+        <div class="calc">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="calc-programs">
+                <div class="calc-radio">
+                  <input type="radio" data-month="6" data-per="0.2" checked name="programs" id="calc-radio-1">
+                  <label for="calc-radio-1">
+                    <span>20% годовых</span>
+                    <small>на 6 месяцев</small>
+                  </label>
+                </div>
+                <div class="calc-radio">
+                  <input type="radio" data-month="12" data-per="0.24" name="programs" id="calc-radio-2">
+                  <label for="calc-radio-2">
+                    <span>24% годовых</span>
+                    <small>на 1 год</small>
+                  </label>
+                </div>
+                <div class="calc-radio">
+                  <input type="radio" data-month="24" data-per="0.26" name="programs" id="calc-radio-3">
+                  <label for="calc-radio-3">
+                    <span>26% годовых</span>
+                    <small>на 2 года</small>
+                  </label>
+                </div>
+                <div class="calc-radio">
+                  <input type="radio" data-month="36" data-per="0.28" name="programs" id="calc-radio-4">
+                  <label for="calc-radio-4">
+                    <span>28% годовых</span>
+                    <small>на 3 года</small>
+                  </label>
+                </div>
+                <div class="calc-radio">
+                  <input type="radio" data-month="48" data-per="0.32" name="programs" id="calc-radio-5">
+                  <label for="calc-radio-5">
+                    <span>32% годовых</span>
+                    <small>на 4 года</small>
+                  </label>
+                  <div class="calc-popular">
+                    популярная программа
+                  </div>
+                </div>
+                <!-- calc-radio -->
+              </div>
+              <div class="calc-legal">
+                  <p>
+                    *Наша компания является налоговым агентом, удерживает и оплачивает НДФЛ Вся информация, размещенная на сайте, несет исключительно
+                    рекламный характер и не является публичной офертой.</p>
+                </div>
+            </div>
+            <!-- /.col-md-6 -->
+            <div class="col-md-6">
+              <h4>
+                  Укажите сумму инвестиций
+              </h4>
+              <input type="text" class="calc-range" name="sum" id="">
+              <div class="calc-sum_invest">
+                <span class="calc-sum_invest_label">Сумма:</span>
+                <span class="calc-sum_invest_num"><span>1 200 000</span> руб.</span>
+              </div>
+              <div>
+                <span class="calc-total">
+                  <strong><span id="total">2 351 569</span> руб.</strong>
+                  <br>
+                  <small>Сумма через <span id="month">36</span> месяцев</small>
+                </span>
+                <span class="calc-monthly">
+                  <strong><span>32 000</span> руб.</strong>
+                  <br>
+                  <small>Ежемесячный доход</small>
+                </span>
+              </div>
+            </div>
+            <!-- /.col-md-6 -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.calc -->
 
         <div class="directions">
           <h2>Направления деятельности</h2>
@@ -251,22 +344,6 @@
     <!-- /.container -->
   </footer>
 
-  <div class="modal">
-    <div class="modal-content">
-      <div class="close">&times;</div>
-      <h4>Заполните поля</h4>
-      <p>Мы свяжемся с вами в ближайшее время</p>
-      <form action="" class="modal-form">
-        <input type="text" placeholder="Ваше имя">
-        <input type="text" placeholder="Ваш телефон">
-        <button type="submit" class="btn btn-primary">Отправить заявку</button>
-        <small>
-          Нажимая кнопку, даю согласие на <a href="#">обработку персональных данных</a>
-        </small>
-      </form>
-    </div>
-  </div>
-
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -274,6 +351,7 @@
     window.jQuery || document.write('<script src="/libs/jquery/jquery-3.3.1.slim.min.js"><\/script>')
   </script>
   <script src="./libs/slick/slick.js"></script>
+  <script src="./libs/powerange-master/dist/powerange.min.js"></script>
   <script src="./js/common.js"></script>
 </body>
 

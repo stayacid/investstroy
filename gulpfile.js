@@ -34,7 +34,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('css-libs', ['sass'], function() {
-	return gulp.src('app/libs/bootstrap-grid/bootstrap-grid.min.css')
+	return gulp.src(['app/libs/bootstrap-grid/bootstrap-grid.min.css', 'app/libs/powerange-master/dist/powerange.min.css'])
 	.pipe(cleancss())
 	.pipe(rename({suffix: '.min'}))
 	.pipe(gulp.dest('app/css'));
@@ -43,6 +43,7 @@ gulp.task('css-libs', ['sass'], function() {
 gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/jquery-3.3.1.slim.min.js',
+		'app/libs/powerange-master/dist/powerange.min.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))

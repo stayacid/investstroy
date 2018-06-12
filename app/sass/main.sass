@@ -27,9 +27,10 @@ img
     border-radius: 5px
     color: $white
     display: inline-block
+    border: none
     font-size: 1.6rem
     font-weight: 700
-    padding: 20px 30px
+    padding: 15px 30px
     text-decoration: none
     transition: all .2s ease
     &-primary
@@ -46,7 +47,6 @@ img
     position: relative
     &_btn
         background-color: transparent
-        border: none
         display: none
         font-size: 1.8rem
         height: 30px
@@ -63,6 +63,8 @@ img
         padding: 0
         li
             margin-right: 45px
+            &:last-child
+                margin-right: 15px
             a
                 color: $dark
                 font-weight: bold
@@ -216,9 +218,243 @@ img
     p
         margin-bottom: 40px
 
-//CONTACS
+//CONTACTS
 .contacts
     font-size: 16px
+    &-img
+        margin-right: 12px
+        vertical-align: middle
+    &-address, &-link
+        display: block
+        line-height: 2
+        text-decoration: none
+        margin-bottom: 10px
+        position: relative
+    &-link
+        color: $dark
+        margin-left: 34px
+    &-phone
+        &::before
+            content: ''
+            background-image: url(../img/phone.png)
+            width: 19px
+            height: 24px
+            display: inline-block
+            position: absolute
+            left: -34px
+            background-repeat: no-repeat
+    &-mail
+        &::before
+            content: ''
+            background-image: url(../img/mail.png)
+            width: 24px
+            height: 24px
+            display: inline-block
+            position: absolute
+            left: -34px
+            background-repeat: no-repeat
+            bottom: 0
+    &-btn
+        padding: 20px 80px
+    &-social-links
+        margin-top: 40px
+        text-align: left
+        ul
+            padding-left: 0
+            li
+                a
+                    background-color: $active-color
+                    color: $white
+//СТРУКТУРА
+.organization
+    &-card
+        background-color: $white
+        padding: 25px 30px
+        margin-bottom: 30px
+        min-height: 40rem
+        transition: box-shadow .2s ease
+        &:hover
+            box-shadow: 0 5px 10px rgba(0, 0, 1, 0.1)
+        a
+            text-transform: uppercase
+            text-decoration: none
+            display: block
+            margin-bottom: 20px
+        small
+            display: block
+            color: $inn
+            line-height: 1.5
+        p
+            line-height: 2.2rem
 
+//ИНВЕСТОРАМ
+.invest
+    &-text
+        margin-bottom: 35px
+    &-link
+        margin-bottom: 10px
+        a
+            text-decoration: none
+            border-bottom: 1px solid $active-color
+.calc
+    h4
+        margin-top: 0
+        font-size: 2.4rem
+        font-weight: 400
+        color: $dark
+    &-radio
+        flex-basis: 50%
+        &:last-child
+            flex-basis: 100%
+            display: flex
+    &-programs
+        display: flex
+        flex-wrap: wrap
+        label
+            display: inline-block
+            margin-bottom: 20px
+            position: relative
+            padding-left: 34px
+            &:hover
+                cursor: pointer
+            small
+                display: block
+                font-size: 1rem
+                color: $inn
+            &::before
+                content: ''
+                width: 24px
+                height: 24px
+                box-shadow: 0 5px 10px rgba(0, 0, 1, 0.1)
+                background-color: $white
+                border: 7px solid $white
+                border-radius: 50%
+                display: inline-block
+                vertical-align: middle
+                transition: all .2s ease
+                position: absolute
+                left: 0
+        input[type="radio"]
+            display: none
+            &:checked
+                &+label::before
+                    background-color: $active-color
+                    border: 7px solid $white
+    &-popular
+        padding: 0 8px
+        margin-left: 16px
+        height: 25px
+        background-color: $active-color
+        color: $white
+        text-align: center
+        line-height: 25px
+        font-size: 1rem
+        text-transform: uppercase
+        position: relative
+        &::before
+            content: ''
+            width: 6px
+            height: 13px
+            position: absolute
+            left: -12px
+            top: 6.5px
+            border: 6px solid transparent
+            border-right: 6px solid $active-color
+    &-legal
+        font-size: 1.2rem
+    &-sum
+        &_invest
+            margin-top: 30px
+            &_num
+                display: inline-block
+                background-color: $white
+                padding: 10px 48px
+                margin-left: 10px
+    &-total, &-monthly
+        margin-top: 20px
+        display: inline-block
+        text-align: center
+        background-color: $white
+        padding: 10px 26px
+        strong
+            font-size: 1.8rem
+            color: $active-color
+            font-weight: 400
+        small
+            font-size: 1rem
+    &-monthly
+        background-color: transparent
+        padding: 0
+    &-total
+        margin-right: 60px
+
+//Карточки объектов
+.object
+    &-card
+        padding: 0
+        img
+            width: 100%
+        &_price
+            font-size: 2rem
+            color: $active-color
+            font-weight: 700
+            text-align: center
+        &-text
+            padding: 30px
+        &_centered
+            text-align: center
+    &-btn
+        text-align: center
+        
+a.object-btn, a.object-card_title
+    text-transform: none
+    font-size: 1.6rem
+
+a.object-card_centered_more
+    border-bottom: 1px solid #000
+    color: $dark
+    display: inline-block
+    margin-bottom: 0
+    margin-top: 10px
+    text-transform: none
+
+//Страница объекта
+.object-page
+    &_text
+        a
+            text-decoration: none
+    &_gallery
+        float: right
+        img
+            margin-left: 20px
+
+//Всплывающие окна
+.modal
+    background-color: rgba(0,0,0,.4)
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    &-content
+        background-color: $white
+        width: 100%
+        max-width: 370px
+        margin: auto
+        text-align: center
+        padding: 40px 50px
+        position: relative
+        .close
+            position: absolute
+            right: 0
+            top: 0
+            font-size: 2rem
+        h4
+            font-size: 1.8rem
+            color: $active-color
+            margin-top: 0
+            font-weight: 400
+    &-form
+        input
 
 @import "media" //всегда в конце
